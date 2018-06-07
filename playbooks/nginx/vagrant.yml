@@ -1,8 +1,15 @@
+---
 - hosts: all
   remote_user: vagrant
   become: yes
-  #vars_files:
   vars:
-
+    - nginx_reverse_proxy_proxies:
+      - config_name: app1proxy
+        backend_name: backend1
+        backends:
+          - localhost:3400
+        domains:
+          - www.example.com
   roles:
-    - { role: ansible-role-nginx }
+    - ansible-nginx-reverse-proxy
+
