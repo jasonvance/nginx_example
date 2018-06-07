@@ -7,7 +7,7 @@
     - net-tools
     - curl
 
-- name: Set up a bacend server to respond to Nginx request.
+- name: Set up a backend server to respond to NGINX requests.
   template:
     src: busybox.j2
     dest: "/usr/local/bin/busybox.sh"
@@ -15,3 +15,9 @@
 
 - name: Set up backend server
   shell: /usr/local/bin/busybox.sh
+
+- name: Custom 404 Page
+  template:
+    src: 404.j2
+    dest: "/var/www/html/404.html"
+    mode: 0750

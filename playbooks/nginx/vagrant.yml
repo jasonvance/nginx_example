@@ -11,6 +11,10 @@
           - localhost:3400
         domains:
           - www.example.com
+    nginx_snippets:
+      error_pages:
+        - error_page 404 /404.html
+
   roles:
     - { role: server-common }
     - { role: ansible-role-nginx }
