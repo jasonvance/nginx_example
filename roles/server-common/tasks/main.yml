@@ -1,0 +1,17 @@
+---
+- name: Install basic items needed to troubleshoot
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
+  with_items:
+    - vim
+    - net-tools
+    - curl
+
+- name: Set up a bacend server to respond to Nginx request.
+  template:
+    src: busybox.j2
+    dest: "/usr/local/bin/busybox.sh"
+    mode: 0750
+
+- name: Set up backend server
+  shell: /usr/local/bin/busybox.sh

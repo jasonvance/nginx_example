@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Serving from port {{ back_end_port }}" > index.html
+nohup busybox httpd -f -p {{ back_end_port }} &

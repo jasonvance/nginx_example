@@ -3,6 +3,7 @@
   remote_user: vagrant
   become: yes
   vars:
+    - back_end_port: 3200
     - nginx_reverse_proxy_proxies:
       - config_name: app1proxy
         backend_name: backend1
@@ -11,5 +12,7 @@
         domains:
           - www.example.com
   roles:
-    - ansible-nginx-reverse-proxy
+    - { role: server-common }
+    - { role: ansible-role-nginx }
+    - { role: ansible-nginx-reverse-proxy }
 
