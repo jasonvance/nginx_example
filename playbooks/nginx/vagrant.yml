@@ -16,6 +16,5 @@
          - error_page 404 /404.html
   roles:
     - { role: server-common }
-    - { role: ansible-role-nginx }
     - { role: ansible-nginx-reverse-proxy }
 

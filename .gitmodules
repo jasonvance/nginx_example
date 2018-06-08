@@ -1,6 +1,6 @@
 [submodule "roles/ansible-nginx-reverse-proxy"]
 	path = roles/ansible-nginx-reverse-proxy
 	url = https://github.com/waharnum/ansible-nginx-reverse-proxy
-[submodule "roles/ansible-role-nginx"]
-	path = roles/ansible-role-nginx
+[submodule "roles/nginx"]
+	path = roles/nginx
 	url = https://github.com/jdauphant/ansible-role-nginx
