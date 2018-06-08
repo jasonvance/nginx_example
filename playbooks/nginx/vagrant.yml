@@ -11,10 +11,12 @@
           - localhost:3400
         domains:
           - www.example.com
+      - if ( $host != www.example.com ) { rewrite ^(.*)$ http://www.example.com/404.html; return  404;}
     - nginx_snippets:
         error_pages:
          - error_page 404 /404.html
   roles:
-    - { role: server-common }
+    - { role: nginx }
     - { role: ansible-nginx-reverse-proxy }
+    - { role: server-common }
 

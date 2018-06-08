@@ -6,7 +6,7 @@
     - vim
     - net-tools
     - curl
-    - nginx
+    #- nginx
 
 - name: Set up a backend server to respond to NGINX requests.
   template:
